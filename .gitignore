@@ -2,3 +2,6 @@ logs
 /download
 /list
 /brick
+.cpcache/
+.nrepl-port
+.direnv/

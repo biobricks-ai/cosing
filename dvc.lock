@@ -1,2 +1,32 @@
 schema: '2.0'
-stages: {}
+stages:
+  download:
+    cmd: clj -Xcosing download
+    outs:
+    - path: download
+      hash: md5
+      md5: 665283684f266d3b68846731ed8b48e5.dir
+      size: 1029426
+      nfiles: 5
+  csv_to_parquet:
+    cmd: clj -Xcosing csv-to-parquet
+    outs:
+    - path: artifacts/1-parquet
+      hash: md5
+      md5: bbd7490af4699a13a0cc55b8ebf2a674.dir
+      size: 630387
+      nfiles: 5
+  build:
+    cmd: clj -Xcosing build-brick
+    deps:
+    - path: download
+      hash: md5
+      md5: 665283684f266d3b68846731ed8b48e5.dir
+      size: 1029426
+      nfiles: 5
+    outs:
+    - path: brick
+      hash: md5
+      md5: 8f3880e2d05dbf15f0965ef4abd4f5b4.dir
+      size: 630357
+      nfiles: 5

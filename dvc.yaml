@@ -10,26 +10,12 @@
 
 stages:
   download:
-    cmd: stages/01_download.sh
-    deps:
-      - stages/01_download.sh
+    cmd: clj -Xcosing download
     outs:
       - download
-      - list
-  unzip: 
-    cmd: stages/02_unzip.sh
+  build:
+    cmd: clj -Xcosing build-brick
     deps:
-      - stages/02_unzip.sh
       - download
-      - list
-    outs:
-      - raw
-  build: 
-    cmd: stages/03_build.sh
-    deps:
-      - stages/03_build.sh
-      - stages/csv2parquet.sh
-      - raw
-      - list
     outs:
       - brick
