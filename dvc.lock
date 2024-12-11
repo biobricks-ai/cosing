@@ -27,6 +27,6 @@ stages:
     outs:
     - path: brick
       hash: md5
-      md5: 8f3880e2d05dbf15f0965ef4abd4f5b4.dir
+      md5: 213f17afb47c3719c9a2c790c2313e64.dir
       size: 630357
       nfiles: 5
