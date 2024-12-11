@@ -1,0 +1,29 @@
+{
+    "name": "SMRT Development Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "BIOBRICKS_TOKEN": "${localEnv:BIOBRICKS_PUBLIC_TOKEN}"
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "python.pythonPath": "/usr/local/bin/python"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-vsliveshare.vsliveshare",  // Live Share extension
+                "github.copilot",  // GitHub Copilot extension
+                "insilica.vscode-pycmd"
+            ]
+        }
+    },
+    "remoteUser": "vscode"
+}

@@ -1,0 +1,7 @@
+python-dotenv==1.0.1
+pandas==2.2.2
+biobricks==0.3.7
+fastparquet==2024.5.0
+pyarrow==16.1.0
+dvc==3.51.1
+dvc-s3==3.2.0
